@@ -1,6 +1,6 @@
 import type { Task } from "@entities/task";
 import type { Filter } from "@features/taskList";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 const initialTasks: Task[] = [
   { id: "1", title: "Send pr", completed: true },
@@ -13,9 +13,9 @@ export function useTasks() {
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
   const [filter, setFilter] = useState<Filter>("all");
 
-  const removeTask = (id: string) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
+  const removeTask = useCallback((id: string) => {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  }, []);
 
   const filteredTasks = useMemo(
     () =>

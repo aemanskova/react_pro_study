@@ -1,12 +1,13 @@
 import type { Task } from "@entities/task";
 import { ActionIcon, Badge, Card, Group, Stack, Text, Tooltip } from "@mantine/core";
+import { memo } from "react";
 
 type Props = {
   task: Task;
   onRemove: (id: string) => void;
 };
 
-export function TaskCard({ task, onRemove }: Props) {
+export const TaskCard = memo(function TaskCard({ task, onRemove }: Props) {
   return (
     <Card withBorder radius="md" p="md">
       <Stack gap={6}>
@@ -33,4 +34,4 @@ export function TaskCard({ task, onRemove }: Props) {
       </Stack>
     </Card>
   );
-}
+});
