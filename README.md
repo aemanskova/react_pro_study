@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+## Для ДЗ 2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ниже — сравнение производительности до/после оптимизаций:
+- `TaskCard` обёрнут в `memo`
+- `removeTask` обёрнут в `useCallback`
 
-Currently, two official plugins are available:
+### 1) Удаление задачи: время рендера до/после
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Видно более высокое время рендеринга при удалении задачи: перерисовывается больше компонентов.
 
-## React Compiler
+![Delete before](./public/deleteBefore.jpg)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+После мемоизации `TaskCard` и оборачивания `removeTask` в `useCallback` видно уменьшение времени рендера и меньше лишних перерисовок.
 
-## Expanding the ESLint configuration
+![Delete after](./public/deleteAfter.jpg)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2) Подсветка ререндеров (Highlight updates): до/после
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Подсветка показывает, что при удалении задачи перерисовываются все карточки и внешние блоки.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![Delete highlight before](public/deleteLightAfter.jpg)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+После оптимизаций подсветка показывает меньше ререндеров: обновляются только внешние блоки, а не сами карточки.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+![Delete highlight after](public/deleteLightBefore.jpg)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3) Переключение фильтров (табы): время рендера до/после
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+При смене табов фильтра заметно большее время рендера компонентов.
+
+![Filter before](./public/filterBefore.jpg)
+
+После применения мемоизации видно уменьшение времени рендера компонентов при переключении табов.
+
+![Filter after](./public/filterAfter.jpg)
