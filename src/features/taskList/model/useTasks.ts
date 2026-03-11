@@ -1,19 +1,14 @@
-import type { Task } from "@entities/task";
+import { type Task, useGetTasksQuery } from "@entities/task";
 import type { Filter } from "@features/taskList";
-import { useCallback, useMemo, useState } from "react";
-
-const initialTasks: Task[] = [
-  { id: "1", title: "Send pr", completed: true },
-  { id: "2", title: "Watch inst reels", completed: true },
-  { id: "3", title: "Sleep", completed: false },
-  { id: "4", title: "Learn new language", completed: false }
-];
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export function useTasks() {
-  const [tasks, setTasks] = useState<Task[]>(initialTasks);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [filter, setFilter] = useState<Filter>("all");
 
-  const removeTask = useCallback((id: string) => {
+  const { data = [], isLoading, error } = useGetTasksQuery();
+
+  const removeTask = useCallback((id: number) => {
     setTasks((prev) => prev.filter((task) => task.id !== id));
   }, []);
 
@@ -27,7 +22,15 @@ export function useTasks() {
     [filter, tasks]
   );
 
+  useEffect(() => {
+    if (data && data.length > 0) {
+      setTasks(data);
+    }
+  }, [data]);
+
   return {
+    error,
+    isLoading,
     filteredTasks,
     tasks,
     removeTask,
