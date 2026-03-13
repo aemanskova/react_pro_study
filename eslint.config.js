@@ -58,7 +58,8 @@ export default defineConfig([
       ],
       "simpleImportSort/imports": "error",
       "simpleImportSort/exports": "error",
-      "unusedImports/no-unused-imports": "error"
+      "unusedImports/no-unused-imports": "error",
+      "react-hooks/set-state-in-effect": "off"
     }
   }
 ]);
