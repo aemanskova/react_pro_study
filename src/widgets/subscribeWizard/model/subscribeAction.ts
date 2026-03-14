@@ -1,4 +1,4 @@
-import type { WizardState } from "@entities/wizard/model/types.ts";
+import type { WizardState } from "@entities/wizard/model/types";
 
 export async function subscribeAction(
   prevState: WizardState,

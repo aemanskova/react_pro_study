@@ -1,1 +1,1 @@
-export { WizardStatus } from "./ui/WizardStatus.tsx";
+export { WizardStatus } from "./ui/WizardStatus";

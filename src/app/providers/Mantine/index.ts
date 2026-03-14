@@ -1,1 +1,1 @@
-export { withStyles } from "./withStyles.tsx";
+export { withStyles } from "./withStyles";

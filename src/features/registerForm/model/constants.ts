@@ -1,4 +1,4 @@
-import type { RegisterFormValues } from "@features/registerForm/model/types.ts";
+import type { RegisterFormValues } from "@features/registerForm/model/types";
 
 export const REQUIRED_RULE = "Field is required";
 export const EMAIL_RULE = "Enter a correct email";

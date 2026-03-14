@@ -1,2 +1,2 @@
-export { FilterSegmented } from "./FilterSegmented.tsx";
-export { RemoveButton } from "./RemoveButton.tsx";
+export { FilterSegmented } from "./FilterSegmented";
+export { RemoveButton } from "./RemoveButton";

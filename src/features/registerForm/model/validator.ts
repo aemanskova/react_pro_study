@@ -3,7 +3,7 @@ import {
   PASSWORD_RULE,
   REQUIRED_RULE,
   URL_RULE
-} from "@features/registerForm/model/constants.ts";
+} from "@features/registerForm/model/constants";
 import { z } from "zod";
 
 export const validationSchema = z

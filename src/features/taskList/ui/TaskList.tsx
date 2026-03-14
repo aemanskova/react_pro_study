@@ -1,5 +1,5 @@
 import { type Task } from "@entities/task";
-import { TaskListItem } from "@features/taskList/ui/TaskListItem.tsx";
+import { TaskListItem } from "@features/taskList/ui/TaskListItem";
 import { Center, Loader, SimpleGrid, Stack, Text } from "@mantine/core";
 
 type Props = {
