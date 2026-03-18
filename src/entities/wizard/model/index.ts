@@ -1,2 +1,2 @@
-export { initialState } from "./constants.ts";
-export type { WizardState } from "./types.ts";
+export { initialState } from "./constants";
+export type { WizardState } from "./types";

@@ -1,5 +1,5 @@
 import type { Task } from "@entities/task";
-import { baseApi } from "@shared/api/baseApi.ts";
+import { baseApi } from "@shared/api/baseApi";
 
 export const tasksApi = baseApi.injectEndpoints({
   endpoints: (build) => ({

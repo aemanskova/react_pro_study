@@ -1,1 +1,1 @@
-export { subscribeAction } from "./subscribeAction.ts";
+export { subscribeAction } from "./subscribeAction";

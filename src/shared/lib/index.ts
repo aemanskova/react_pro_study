@@ -1,1 +1,1 @@
-export { compose } from "./compose.ts";
+export { compose } from "./compose";

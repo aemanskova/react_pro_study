@@ -1,4 +1,4 @@
-import { store } from "@app/store.ts";
+import { store } from "@app/store";
 import type { ComponentType } from "react";
 import { Provider } from "react-redux";
 

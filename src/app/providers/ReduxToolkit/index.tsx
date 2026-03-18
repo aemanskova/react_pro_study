@@ -1,1 +1,1 @@
-export { withReduxToolkit } from "./withReduxToolkit.tsx";
+export { withReduxToolkit } from "./withReduxToolkit";

@@ -1,1 +1,1 @@
-export { SubscribeWizard } from "./ui/SubscribeWizard.tsx";
+export { SubscribeWizard } from "./ui/SubscribeWizard";

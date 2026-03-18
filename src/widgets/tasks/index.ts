@@ -1,1 +1,1 @@
-export { TasksWidget } from "./ui/TasksWidget.tsx";
+export { TasksWidget } from "./ui/TasksWidget";

@@ -3,11 +3,11 @@ import {
   type RegisterFormValues,
   validationSchema
 } from "@features/registerForm/model";
-import { Email } from "@features/registerForm/ui/Email.tsx";
-import { Password } from "@features/registerForm/ui/Password.tsx";
-import { PasswordConfirm } from "@features/registerForm/ui/PasswordConfirm.tsx";
-import { SocialLinks } from "@features/registerForm/ui/SocialLinks.tsx";
-import { UserName } from "@features/registerForm/ui/Username.tsx";
+import { Email } from "@features/registerForm/ui/Email";
+import { Password } from "@features/registerForm/ui/Password";
+import { PasswordConfirm } from "@features/registerForm/ui/PasswordConfirm";
+import { SocialLinks } from "@features/registerForm/ui/SocialLinks";
+import { UserName } from "@features/registerForm/ui/Username";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Button, Stack } from "@mantine/core";
 import { FormProvider, useForm } from "react-hook-form";

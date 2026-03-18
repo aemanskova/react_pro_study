@@ -1,1 +1,1 @@
-export { tasksApi, useGetTasksQuery } from "./tasksApi.ts";
+export { tasksApi, useGetTasksQuery } from "./tasksApi";
