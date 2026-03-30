@@ -1,2 +1,2 @@
-export { routes, sidebarLinks } from "./constants";
+export { sidebarLinks } from "./constants";
 export { Router } from "./Router";

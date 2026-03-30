@@ -1,9 +1,11 @@
 import "@mantine/core/styles.css";
 
 import { withProviders } from "@app/providers";
-import { routes, sidebarLinks } from "@app/routing";
+import { sidebarLinks } from "@app/routing";
+import { ProfileHeaderActions } from "@features/profileActions";
 import { AppShell, Burger, Group, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { routes } from "@shared/config/routes.ts";
 import { Sidebar } from "@widgets/sidebar";
 import { NavLink, Outlet } from "react-router";
 
@@ -24,6 +26,7 @@ export const App = withProviders(() => {
               React Pro Study
             </Text>
           </Group>
+          <ProfileHeaderActions />
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">

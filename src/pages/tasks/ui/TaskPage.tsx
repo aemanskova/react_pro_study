@@ -1,7 +1,8 @@
 import { Container, Stack, Title } from "@mantine/core";
+import { withProtection } from "@shared/lib";
 import { TasksWidget } from "@widgets/tasks";
 
-export function TaskPage() {
+function TaskPage() {
   return (
     <Container size="lg" py="md">
       <Stack gap="md">
@@ -11,3 +12,5 @@ export function TaskPage() {
     </Container>
   );
 }
+
+export const ProtectedTaskPage = withProtection(TaskPage);
