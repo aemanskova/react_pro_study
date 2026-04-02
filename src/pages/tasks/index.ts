@@ -1,1 +1,1 @@
-export { TaskPage } from "./ui/TaskPage";
+export { ProtectedTaskPage } from "./ui/TaskPage";

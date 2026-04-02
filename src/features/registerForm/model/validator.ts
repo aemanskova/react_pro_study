@@ -1,9 +1,5 @@
-import {
-  EMAIL_RULE,
-  PASSWORD_RULE,
-  REQUIRED_RULE,
-  URL_RULE
-} from "@features/registerForm/model/constants";
+import { PASSWORD_RULE, URL_RULE } from "@features/registerForm/model/constants";
+import { EMAIL_RULE, REQUIRED_RULE } from "@shared/lib";
 import { z } from "zod";
 
 export const validationSchema = z

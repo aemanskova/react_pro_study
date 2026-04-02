@@ -1,10 +1,4 @@
-export const routes = {
-  home: "/",
-  tasks: "/tasks",
-  forms: "/forms",
-  ref: "/ref",
-  wizard: "/wizard"
-} as const;
+import { routes } from "@shared/config/routes.ts";
 
 export const sidebarLinks = [
   { label: "Tasks", to: routes.tasks },
